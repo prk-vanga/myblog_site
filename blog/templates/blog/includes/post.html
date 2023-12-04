@@ -1,0 +1,19 @@
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static "blog/includes/post.css"%}">
+
+{% endblock css_files %}
+
+
+<li>
+    <article class='post'>
+        <a href="{% url "post-detail-page" post.slug  %}">
+            <img src="{% static "blog/media/"|add:post.image %}" alt={{ post.image }}>
+            <div class="post__content">
+                <h3>{{ post.title }}</h3>
+                <p>{{ post.excerpt }}</p>
+            </div>
+        </a>
+    </article>
+</li>
